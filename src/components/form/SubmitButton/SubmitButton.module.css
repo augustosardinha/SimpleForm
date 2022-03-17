@@ -1,0 +1,23 @@
+.btn {
+    all: unset;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 1em 2em;
+    border-radius: 0.2em;
+    transition: 0.5s;
+    cursor:pointer;
+    color: #fff;
+}
+.confirm {
+    background-color: rgb(42, 77, 119);
+}
+.confirm:hover {
+    background-color: rgb(58, 106, 165);
+}
+
+.cancel {
+    background-color:rgba(251, 6, 21, 0.65);
+}
+.cancel:hover{
+    background-color: rgba(251, 6, 21, 0.8);
+}

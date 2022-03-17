@@ -1,0 +1,48 @@
+.formContainer {
+    width: 800px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+    background-color: #fff;
+ }
+
+ .form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: #222
+ }
+.form h1{
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+.form p{
+    padding-top: 2em;
+}
+
+.form span{
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-top: 3em;
+}
+
+.cadastroRealizado img{
+    width: 450px;
+    height: 450px;
+}
+
+.cadastroRealizado h2{
+    font-size: 1.5em;
+    color: #0B2F49;
+}
