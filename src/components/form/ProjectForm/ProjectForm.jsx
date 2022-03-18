@@ -6,42 +6,42 @@ import SubmitButton from '../SubmitButton/SubmitButton';
 import Message from '../../Message/Message';
 
 export default function ProjectForm() {
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
+    const [form, setForm] = useState({ name: '', email: '', password: ''});
     const [error, setError] = useState('');
     const [formSucess, setFormSucess] = useState(false);
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        if (!email && !name && !password) {
+        if (!form.email && !form.name && !form.password) {
             setError('Todos os campos são obrigatórios.');
             return;
         }
-        if (!name) {
+        if (!form.name) {
             setError('Nome é obrigatório.');
             return;
         }
-        if (!email) {
+        if (!form.email) {
             setError('Email é obrigatório.');
             return;
         }
-        if(!password){
+        if(!form.password){
             setError('A senha é obrigatória.');
             return;
         }
-        if (password.length < 8) {
+        if (form.password.length < 8) {
             setError('A senha precisa ter pelo menos 8 digitos.');
             return;
         }
         setFormSucess(true);
     }
     function clearForm() {
-        setEmail('');
-        setPassword('');
-        setName('');
+        setForm({...form, name: '', email: '', password: ''})
         setError('');
+    }
+
+    function handleOnChange({target}){
+        setForm({ ...form, [target.name]: target.value })
     }
 
     return (
@@ -53,22 +53,22 @@ export default function ProjectForm() {
                         type="text"
                         name="name"
                         placeholder="Nome"
-                        handleOnChange={(e) => setName(e.target.value)}
-                        value={name}
+                        handleOnChange={handleOnChange}
+                        value={form.name}
                     />
                     <Input
                         type="text"
                         name="email"
                         placeholder="E-mail"
-                        handleOnChange={(e) => setEmail(e.target.value)}
-                        value={email}
+                        handleOnChange={handleOnChange}
+                        value={form.email}
                     />
                     <Input
                         type="password"
                         name="password"
                         placeholder="Senha"
-                        handleOnChange={(e) => setPassword(e.target.value)}
-                        value={password}
+                        handleOnChange={handleOnChange}
+                        value={form.password}
                     />
                     {error && <Message message={error} />}
                     <div className={styles.buttons}>
