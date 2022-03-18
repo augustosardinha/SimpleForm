@@ -7,8 +7,7 @@ export default function Input({ name, type, placeholder, handleOnChange, value }
     const [passwordType, setPasswordType] = useState('password');
 
     function togglePasswordType() {
-        const password = passwordType;
-        setPasswordType(password === 'password' ? 'text' : 'password');
+        setPasswordType(passwordType === 'password' ? 'text' : 'password');
     }
     return (
         <div className={styles.item}>
@@ -30,7 +29,7 @@ export default function Input({ name, type, placeholder, handleOnChange, value }
                 </>
             ) : (
                 <input
-                    type={type === 'password'}
+                    type={type}
                     name={name}
                     id={name}
                     placeholder={placeholder}
